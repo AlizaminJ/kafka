@@ -17,6 +17,12 @@ mkdir kafka
 cd kafka
 tar -xvzf ~/Downloads/kafka.tgz --strip 1
 ```
+- Check the structure in kafka folder:
+  - "bin" - all scripts
+  - "config" - ".properties" files for configuration
+  - "libs" - installed libraries
+  - "logs" - logs files
+  - "site-docs" - documentation
 - After installation, if you try to start the server you will get error, because kafka needs to connect zookeeper:
 ```
 bin/kafka-server-start.sh config/server.properties
