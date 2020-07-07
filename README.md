@@ -46,4 +46,4 @@ version=0
 cluster.id=4kUvEDRXSBi-u9LwNOX_7g
 ```
 
-
+<img src="https://github.com/AlizaminJ/kafka/blob/master/assets/kafka-architecture.png" alt="arcitecture>
