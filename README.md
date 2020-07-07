@@ -12,7 +12,6 @@
 ```
 ssh -i YOUR_PEM_FILE.pem YOUR_USER@VPS_IP_ADDESS
 ```
-
 - Install java
 ```
 sudo apt update && sudo apt -y upgrade
@@ -50,15 +49,21 @@ broker.id=0
 version=0
 cluster.id=4kUvEDRXSBi-u9LwNOX_7g
 ```
-- Create a topic (remember you may specify either bootstrap server or zookeeper, try ```bin/kafka-topics.sh --createv``` to see):
+- Create a topic (remember, you may specify either any of kafka/broker/bootstrap server or zookeeper, try ```bin/kafka-topics.sh --create``` to see):
 ```
-bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --topic TOPIC_NAME_1
+bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --topic YOUR_TOPIC_NAME_1
 ```
-
 - List existing topics:
 ```
-bin/kafka-topics.sh --list --zookeper localhost:2181
+bin/kafka-topics.sh --list --zookeeper localhost:2181
 ```
-- Inside every topic, messages can be spread among several partitions. As you may read in "config/server.properites", the default number of log partitions per topic is 1. More partitions allow greater parallelism for consumption, but this will also result in more files across the brokers.
+- To read a topic's details:
+```
+bin/kafka-topics.sh --describe --zookeeper localhost:2181 --topic YOUR_TOPIC_NAME_1
 
-
+# Result. Here zero stands for broker_id which starts at zero
+ Topic: YOUR_TOPIC_NAME_1   Partition: 0    Leader: 0       Replicas: 0     Isr: 0
+```   
+- Inside every topic, messages can be spread among several partitions. As you may read in "config/server.properites", the default number of log partitions per topic is 1. More partitions allow greater parallelism for consumption, but this will also result in more files across the brokers. Each partition should have at least one leader.
+![Partitions](./assets/partitions.png?raw=true "Partitions")
+ReplicationFactor says how many time each message is replicated in a cluster (redundancy). For example, if you have 3 servers, and ReplicationFactor=3, then every single message will be replicated in each server once.
