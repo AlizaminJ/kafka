@@ -3,11 +3,11 @@
 ## Overall Architecture
 ![kafka architecture](./assets/kafka-architecture.png?raw=true "kafka architecture")
 
-## Requirements:
+## Requirements
 - Java installed Ubuntu VPS. For VPS, you may try <a href="https://aws.amazon.com/lightsail/">AWS Lightsail</a> (which I use) or <a href="https://www.digitalocean.com/products/droplets/"> Droplets on Digital Ocean </a>
 - Choose 4G RAM VPS not to encounter memory issues
 
-## Process:
+## Process
 - Connect using your own SSH client to VPS with your .pem-file (you have to download it from Lightsail) after having created it:
 ```
 ssh -i YOUR_PEM_FILE.pem YOUR_USER@VPS_IP_ADDESS
@@ -18,7 +18,7 @@ ssh -i YOUR_PEM_FILE.pem YOUR_USER@VPS_IP_ADDESS
 sudo apt update && sudo apt -y upgrade
 sudo apt -y install openjdk-11-jre-headless
 ```
-- Install binary version kafka on https://kafka.apache.org/downloads: Get the installation link (it suggests the closest server, in my case "https://apache.uib.no/kafka/2.5.0/kafka_2.12-2.5.0.tgz", create and download the file into "Downloads" directory, and finally install it into a new "kafka" directory 
+- Install binary version kafka on https://kafka.apache.org/downloads: Get the installation link (it suggests the closest server, in my case "https://apache.uib.no/kafka/2.5.0/kafka_2.12-2.5.0.tgz", create and download the file into "Downloads" directory, and finally install it into a new "kafka" directory: 
 ```
 curl https://apache.uib.no/kafka/2.5.0/kafka_2.12-2.5.0.tgz -o Downloads/kafka.tgz
 mkdir kafka
@@ -50,6 +50,15 @@ broker.id=0
 version=0
 cluster.id=4kUvEDRXSBi-u9LwNOX_7g
 ```
+- Create a topic (remember you may specify either bootstrap server or zookeeper, try ```bin/kafka-topics.sh --createv``` to see):
+```
+bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --topic TOPIC_NAME_1
+```
 
+- List existing topics:
+```
+bin/kafka-topics.sh --list --zookeper localhost:2181
+```
+- Inside every topic, messages can be spread among several partitions. As you may read in "config/server.properites", the default number of log partitions per topic is 1. More partitions allow greater parallelism for consumption, but this will also result in more files across the brokers.
 
 
