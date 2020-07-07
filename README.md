@@ -32,13 +32,18 @@ tar -xvzf ~/Downloads/kafka.tgz --strip 1
 ```
 bin/kafka-server-start.sh config/server.properties
 ```
-- So start zookeper (default port localhost:2181), then start the server (default port localhost:9092) in a new terminal while zookeper is running:
+- So start zookeper (default port localhost:2181), then start the server/broker (default port localhost:9092; NB! If you want to run multiple brokers in a single computer you have to run each broker in a distinct port) in a new terminal while zookeper is running:
 ```
 bin/zookeeper-server-start.sh config/zookeeper.properties
 ```
 - Kafka saves logs in "logs" folder but messages are stored in /tmp/kafka-logs (!) whcih are automatically created by kafka server. To check running brokers in kafka-logs:  
 ```
 cat meta.properties
+
+# result something like this
+broker.id=0
+version=0
+cluster.id=4kUvEDRXSBi-u9LwNOX_7g
 ```
 
 
