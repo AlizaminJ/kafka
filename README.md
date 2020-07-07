@@ -1,10 +1,15 @@
 # kafka crash course
 
 # Requirements:
-- Java installed Ubuntu VPS. For VPS, you may try <a href="https://aws.amazon.com/lightsail/">AWS Lightsail</a> or <a href="https://www.digitalocean.com/products/droplets/"> Droplets on Digital Ocean </a>
+- Java installed Ubuntu VPS. For VPS, you may try <a href="https://aws.amazon.com/lightsail/">AWS Lightsail</a> (which I use) or <a href="https://www.digitalocean.com/products/droplets/"> Droplets on Digital Ocean </a>
+- Choose 4G RAM VPS not to encounter memory issues
 
 # Process:
-- Connect to VPS via ssh
+- Connect using your own SSH client to VPS with your .pem-file (you have to download it from Lightsail) after having created it:
+```
+ssh -i YOUR_PEM_FILE.pem YOUR_USER@VPS_IP_ADDESS
+```
+
 - Install java
 ```
 sudo apt update && sudo apt -y upgrade
