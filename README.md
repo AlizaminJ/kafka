@@ -1,10 +1,13 @@
-# kafka crash course
+# Kafka Crash Course
 
-# Requirements:
+## Overall Architecture
+![kafka architecture](./assets/kafka-architecture.png?raw=true "kafka architecture")
+
+## Requirements:
 - Java installed Ubuntu VPS. For VPS, you may try <a href="https://aws.amazon.com/lightsail/">AWS Lightsail</a> (which I use) or <a href="https://www.digitalocean.com/products/droplets/"> Droplets on Digital Ocean </a>
 - Choose 4G RAM VPS not to encounter memory issues
 
-# Process:
+## Process:
 - Connect using your own SSH client to VPS with your .pem-file (you have to download it from Lightsail) after having created it:
 ```
 ssh -i YOUR_PEM_FILE.pem YOUR_USER@VPS_IP_ADDESS
@@ -28,10 +31,12 @@ tar -xvzf ~/Downloads/kafka.tgz --strip 1
   - "libs" - installed libraries
   - "logs" - logs files
   - "site-docs" - documentation
-- After installation, if you try to start the server you will get error, because kafka needs to connect zookeeper:
+- After installation, if you try to start the server you will get error, because kafka needs to connect to zookeeper which coordinates brokers:
 ```
 bin/kafka-server-start.sh config/server.properties
 ```
+![ZooKeeper](./assets/zookeper-coordination.png?raw=true "ZooKeeper")
+
 - So start zookeper (default port localhost:2181), then start the server/broker (default port localhost:9092; NB! If you want to run multiple brokers in a single computer you have to run each broker in a distinct port) in a new terminal while zookeper is running:
 ```
 bin/zookeeper-server-start.sh config/zookeeper.properties
@@ -46,4 +51,3 @@ version=0
 cluster.id=4kUvEDRXSBi-u9LwNOX_7g
 ```
 
-<img src="https://github.com/AlizaminJ/kafka/blob/master/assets/kafka-architecture.png" alt="arcitecture>
