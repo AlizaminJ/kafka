@@ -17,3 +17,7 @@ mkdir kafka
 cd kafka
 tar -xvzf ~/Downloads/kafka.tgz --strip 1
 ```
+- After installation, if you try to start the server you will get error, because kafka needs to connect zookeeper:
+```
+bin/kafka-server-start.sh config/server.properties
+```
