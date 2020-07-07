@@ -4,7 +4,7 @@
 ![kafka architecture](./assets/kafka-architecture.png?raw=true "kafka architecture")
 
 ## Requirements
-- Java installed Ubuntu VPS. For VPS, you may try <a href="https://aws.amazon.com/lightsail/">AWS Lightsail</a> (which I use) or <a href="https://www.digitalocean.com/products/droplets/"> Droplets on Digital Ocean </a>
+- Java installed Ubuntu machine. If you do not have an Ubuntu machine, you may try <a href="https://aws.amazon.com/lightsail/">AWS Lightsail</a> or <a href="https://www.digitalocean.com/products/droplets/"> Droplets on Digital Ocean as a VPS solution (Kafka is a server side system!)</a>
 - Choose 4G RAM VPS not to encounter memory issues
 
 ## Process
