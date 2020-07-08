@@ -6,7 +6,7 @@ Apache Kafka is a distributed publish-subscribe messaging system.
 - <a href="https://sookocheff.com/post/kafka/kafka-in-a-nutshell/">Kafka in a Nutshell</a>
 - <a href="http://cloudurable.com/blog/kafka-architecture/index.html">Kafka Architecture</a>
 - <a href="https://www.confluent.io/blog/using-apache-kafka-drive-cutting-edge-machine-learning/">Using Apache Kafka to Drive Cutting-Edge Machine Learning</a>
-- <a href=""> </a>
+- <a href="https://www.cloudkarafka.com/blog/2016-11-30-part1-kafka-for-beginners-what-is-apache-kafka.html">Part 1: Apache Kafka for beginners - What is Apache Kafka?</a>
 - <a href=""> </a>
 
 ## Overall Architecture
@@ -84,7 +84,7 @@ bin/kafka-topics.sh --describe --zookeeper localhost:2181 --topic YOUR_TOPIC_NAM
 ```   
 - Inside every topic, messages can be spread among several partitions. As you may read in "config/server.properites", the default number of log partitions per topic is 1. More partitions allow greater parallelism for consumption, but this will also result in more files across the brokers. Each partition should have at least one leader.  
 
-![Partitions](./assets/partitions.png?raw=true "Partitions")  
+![Partitions](./assets/kafka-partitions.png?raw=true "Partitions")  
 
 ReplicationFactor says how many time each message is replicated in a cluster (redundancy). For example, if you have 3 servers, and ReplicationFactor=3, then every single message will be replicated in each server once.
 
@@ -108,7 +108,8 @@ bin/kafka-console-producer.sh --broker-list localhost:9092 --topic YOUR_TOPIC_NA
 - Kafka stores messages even if they were already consumed by one of the consumers. The same messages can be read multiple times by different consumers. Multiple consumers and multiple producers can exchange messages via single centralized storage point - kafka cluster. Producers and consumers do not know each other.
 The structure of the message:
   - Timestamp
-  - Offset number (which is unique across partition)
+  - Offset number (which is unique across 
+  ion)
   - Key (optional)
-  - Value (sequence of bytes)
+  - Value (sequence of bytes) --> You can exchange anything like objects, strings or number
 
