@@ -90,7 +90,9 @@ bin/kafka-topics.sh --describe --zookeeper localhost:2181 --topic YOUR_TOPIC_NAM
 
 ![Partition leader](./assets/kafka-partition-leader.png?raw=true "Partition leader")  
 
-ReplicationFactor says how many time each message is replicated in a cluster (redundancy). For example, if you have 3 servers, and ReplicationFactor=3, then every single message will be replicated in each server once.
+ReplicationFactor says how many time each message is replicated in a cluster (redundancy). For example, if you have 3 servers, and ReplicationFactor=3, then every single message will be replicated in each server once.  
+- But what controls the leader-follower relationship (and much more)? The brain of Apache Kafka is controller. A big part of what the controller does is to maintain the consistency of the replicas and determine which replica can be used to serve the clients, especially during individual broker failure.
+
 
 ### Producer & Consumer
 - Start consumer (which consumes messages) in a new terminal:
