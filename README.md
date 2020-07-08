@@ -125,7 +125,11 @@ The structure of the message:
 It is up to the producer to choose the partition.  
 
 ##  Overall Process
-![kafka infrastructure](./assets/kafka-infrastructure.png?raw=true "kafka infrastructure")  
+### Producer   
+![Producer](./assets/kafka-infrastructure-producer.png?raw=true "producer")   
+### Consumer
+![Consumer](./assets/kafka-infrastructure-consumer.png?raw=true "consumer")  
+
 
 
 
