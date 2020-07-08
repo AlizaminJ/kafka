@@ -7,13 +7,12 @@
 - <a href=""> </a>
 - <a href=""> </a>
 
-
 ## Overall Architecture
 ![kafka architecture core](./assets/kafka-architecture-core.png?raw=true "kafka architecture core")  
+</hr>
 ![kafka architecture](./assets/kafka-architecture.png?raw=true "kafka architecture")  
+</hr>
 ![kafka architecture for ml](./assets/kafka-architecture-for-ml.png?raw=true "kafka architecture for ML")
-
-
 
 ## Requirements
 - Java installed Ubuntu machine. If you do not have an Ubuntu machine, you may try <a href="https://aws.amazon.com/lightsail/">AWS Lightsail</a> or <a href="https://www.digitalocean.com/products/droplets/"> Droplets on Digital Ocean as a VPS solution (Kafka is a server side system!)</a>
