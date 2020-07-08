@@ -2,7 +2,7 @@
 
 Apache Kafka is a distributed publish-subscribe messaging system.
 
-## Further Reading 
+## Further Reading & Sources
 - <a href="https://sookocheff.com/post/kafka/kafka-in-a-nutshell/">Kafka in a Nutshell</a>
 - <a href="http://cloudurable.com/blog/kafka-architecture/index.html">Kafka Architecture</a>
 - <a href="https://www.confluent.io/blog/using-apache-kafka-drive-cutting-edge-machine-learning/">Using Apache Kafka to Drive Cutting-Edge Machine Learning</a>
