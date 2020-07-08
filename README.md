@@ -82,7 +82,7 @@ bin/kafka-topics.sh --describe --zookeeper localhost:2181 --topic YOUR_TOPIC_NAM
 # Result. Here zero stands for broker_id which starts at zero
  Topic: YOUR_TOPIC_NAME_1   Partition: 0    Leader: 0       Replicas: 0     Isr: 0
 ```   
-- Inside every topic, messages can be distributed among several partitions. As you may read in "config/server.properites", the default number of log partitions per topic is 1 (for production environments, it is recommended to have 3: 1 leader and 2 replicas. More partitions allow greater parallelism for consumption, but this will also result in more files across the brokers. Each partition should have at least one leader.  
+- Inside every topic, messages can be distributed among several partitions. As you may read in "config/server.properites", the default number of log partitions per topic is 1 (for production environments, it is recommended to have 3: 1 leader and 2 replicas). More partitions allow greater parallelism for consumption, but this will also result in more files across the brokers. Each partition should have at least one leader.  
 
 ![Partitions](./assets/kafka-partitions.png?raw=true "Partitions")  
 
@@ -116,4 +116,4 @@ The structure of the message:
   ion)
   - Key (optional)
   - Value (sequence of bytes) --> You can exchange anything like objects, strings or number   
-It is up tothe producer to choose the partition. 
+It is up to the producer to choose the partition. 
