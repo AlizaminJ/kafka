@@ -85,7 +85,8 @@ bin/kafka-topics.sh --describe --zookeeper localhost:2181 --topic YOUR_TOPIC_NAM
 - Inside every topic, messages can be spread among several partitions. As you may read in "config/server.properites", the default number of log partitions per topic is 1. More partitions allow greater parallelism for consumption, but this will also result in more files across the brokers. Each partition should have at least one leader.  
 
 ![Partitions](./assets/kafka-partitions.png?raw=true "Partitions")  
-![Partitions](./assets/kafka-partitions-2.png?raw=true "Partitions")  
+
+![Partitions structure](./assets/kafka-partitions-structure.png?raw=true "Partitions structure")  
 
 ReplicationFactor says how many time each message is replicated in a cluster (redundancy). For example, if you have 3 servers, and ReplicationFactor=3, then every single message will be replicated in each server once.
 
