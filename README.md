@@ -10,7 +10,6 @@ Apache Kafka is a distributed publish-subscribe messaging system.
 - <a href="https://www.youtube.com/watch?v=CU44hKLMg7k&list=PLWkguCWKqN9P6pYm70oCGsa11Fnrf2MEX"> Kafke Beginner Course </a>
 - <a href=""> </a>
 
-https://github.com/bstashchuk/apache-kafka-course
 ## Overall Architecture
 
 ![kafka architecture core](./assets/kafka-architecture-core.png?raw=true "kafka architecture core")  
