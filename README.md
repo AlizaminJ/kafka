@@ -7,8 +7,10 @@ Apache Kafka is a distributed publish-subscribe messaging system.
 - <a href="http://cloudurable.com/blog/kafka-architecture/index.html">Kafka Architecture</a>
 - <a href="https://www.confluent.io/blog/using-apache-kafka-drive-cutting-edge-machine-learning/">Using Apache Kafka to Drive Cutting-Edge Machine Learning</a>
 - <a href="https://www.cloudkarafka.com/blog/2016-11-30-part1-kafka-for-beginners-what-is-apache-kafka.html">Part 1: Apache Kafka for beginners - What is Apache Kafka?</a>
+- <a href="https://www.youtube.com/watch?v=CU44hKLMg7k&list=PLWkguCWKqN9P6pYm70oCGsa11Fnrf2MEX"> Kafke Beginner Course </a>
 - <a href=""> </a>
 
+https://github.com/bstashchuk/apache-kafka-course
 ## Overall Architecture
 
 ![kafka architecture core](./assets/kafka-architecture-core.png?raw=true "kafka architecture core")  
@@ -94,6 +96,7 @@ ReplicationFactor says how many time each message is replicated in a cluster (re
 - But what controls the leader-follower relationship (and much more)? The brain of Apache Kafka is controller. A big part of what the controller does is to maintain the consistency of the replicas and determine which replica can be used to serve the clients, especially during individual broker failure.  
 
 ![Controller](./assets/kafka-controller.png?raw=true "Controller") 
+
 
 ### Producer & Consumer
 - Start consumer (which consumes messages) in a new terminal:
