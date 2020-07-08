@@ -50,9 +50,10 @@ tar -xvzf ~/Downloads/kafka.tgz --strip 1
 ```
 bin/kafka-server-start.sh config/server.properties
 ```
-![ZooKeeper](./assets/zookeper-coordination.png?raw=true "ZooKeeper")
+![ZooKeeper](./assets/zookeper-coordination.png?raw=true "ZooKeeper")   
+For fallback, you may create zookeeper cluster (ensemble) if there are too many broker clusters
 
-- Zookeeper maintains list of active brokers, manages configuration of the topics and partitions and elects controller. So start zookeper (default port localhost:2181), then start the server/broker (default port localhost:9092; NB! If you want to run multiple brokers in a single computer you have to run each broker in a distinct port) in a new terminal while zookeper is running:
+- Zookeeper maintains list of active brokers, manages configuration of the topics and partitions and elects controller. So start zookeper (default port localhost: 2181), then start the server/broker (default port localhost: 9092; NB! If you want to run multiple brokers in a single computer you have to run each broker in a distinct port) in a new terminal while zookeper is running:
 ```
 bin/zookeeper-server-start.sh config/zookeeper.properties
 ```
@@ -105,4 +106,9 @@ bin/kafka-console-producer.sh --broker-list localhost:9092 --topic YOUR_TOPIC_NA
 > ...etc
 ```
 - Kafka stores messages even if they were already consumed by one of the consumers. The same messages can be read multiple times by different consumers. Multiple consumers and multiple producers can exchange messages via single centralized storage point - kafka cluster. Producers and consumers do not know each other.
+The structure of the message:
+  - Timestamp
+  - Offset number (which is unique across partition)
+  - Key (optional)
+  - Value (sequence of bytes)
 
