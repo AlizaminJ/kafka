@@ -8,7 +8,9 @@ Apache Kafka is a distributed publish-subscribe messaging system.
 - <a href="https://www.confluent.io/blog/using-apache-kafka-drive-cutting-edge-machine-learning/">Using Apache Kafka to Drive Cutting-Edge Machine Learning</a>
 - <a href="https://www.cloudkarafka.com/blog/2016-11-30-part1-kafka-for-beginners-what-is-apache-kafka.html">Part 1: Apache Kafka for beginners - What is Apache Kafka?</a>
 - <a href="https://www.youtube.com/watch?v=CU44hKLMg7k&list=PLWkguCWKqN9P6pYm70oCGsa11Fnrf2MEX"> Kafke Beginner Course </a>
+- <a href="https://insidebigdata.com/2018/04/19/developing-deeper-understanding-apache-kafka-architecture-part-2-write-read-scalability/">Developing a Deeper Understanding of Apache Kafka Architecture</a>
 - <a href=""> </a>
+
 
 ## Overall Architecture
 
@@ -23,7 +25,6 @@ Apache Kafka is a distributed publish-subscribe messaging system.
 - Java installed Ubuntu machine. If you do not have an Ubuntu machine, you may try <a href="https://aws.amazon.com/lightsail/">AWS Lightsail</a> or <a href="https://www.digitalocean.com/products/droplets/"> Droplets on Digital Ocean as a VPS solution (Kafka is a server side system!)</a>
 - Choose 4G RAM VPS not to encounter memory issues
 
-## Process
 ### Intro & Installation
 - Connect using your own SSH client to VPS with your .pem-file (you have to download it from Lightsail) after having created it:
 ```
@@ -121,4 +122,10 @@ The structure of the message:
   ion)
   - Key (optional)
   - Value (sequence of bytes) --> You can exchange anything like objects, strings or number   
-It is up to the producer to choose the partition. 
+It is up to the producer to choose the partition.  
+
+##  Overall Process
+![kafka infrastructure](./assets/kafka-infrastructure.png?raw=true "kafka infrastructure")  
+
+
+
