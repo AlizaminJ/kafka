@@ -1,5 +1,7 @@
 # Kafka Crash Course
 
+Apache Kafka is a distributed publish-subscribe messaging system.
+
 ## Further Reading 
 - <a href="https://sookocheff.com/post/kafka/kafka-in-a-nutshell/">Kafka in a Nutshell</a>
 - <a href="http://cloudurable.com/blog/kafka-architecture/index.html">Kafka Architecture</a>
@@ -50,7 +52,7 @@ bin/kafka-server-start.sh config/server.properties
 ```
 ![ZooKeeper](./assets/zookeper-coordination.png?raw=true "ZooKeeper")
 
-- So start zookeper (default port localhost:2181), then start the server/broker (default port localhost:9092; NB! If you want to run multiple brokers in a single computer you have to run each broker in a distinct port) in a new terminal while zookeper is running:
+- Zookeeper maintains list of active brokers, manages configuration of the topics and partitions and elects controller. So start zookeper (default port localhost:2181), then start the server/broker (default port localhost:9092; NB! If you want to run multiple brokers in a single computer you have to run each broker in a distinct port) in a new terminal while zookeper is running:
 ```
 bin/zookeeper-server-start.sh config/zookeeper.properties
 ```
