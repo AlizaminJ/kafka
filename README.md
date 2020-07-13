@@ -30,6 +30,7 @@ ssh -i YOUR_PEM_FILE.pem YOUR_USER@VPS_IP_ADDESS
 ```
 sudo apt update && sudo apt -y upgrade
 sudo apt -y install openjdk-11-jre-headless
+sudo apt -y install openjdk-11-jdk
 ```
 - Install binary version kafka on https://kafka.apache.org/downloads: Get the installation link (it suggests the closest server, in my case "https://apache.uib.no/kafka/2.5.0/kafka_2.12-2.5.0.tgz", create and download the file into "Downloads" directory, and finally install it into a new "kafka" directory: 
 ```
