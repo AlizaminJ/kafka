@@ -26,7 +26,7 @@ Apache Kafka is a distributed publish-subscribe messaging system.
 ```
 ssh -i YOUR_PEM_FILE.pem YOUR_USER@VPS_IP_ADDESS
 ```
-- Install java
+- Install java runtime environment and development kit:
 ```
 sudo apt update && sudo apt -y upgrade
 sudo apt -y install openjdk-11-jre-headless
